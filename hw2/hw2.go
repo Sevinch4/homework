@@ -13,6 +13,7 @@ func main() {
 	rev = (n1/100)*100 + ((n1%100)%10)*10 + (n1%100)/10
 	fmt.Println(n1, rev)
 
+	//task-2
 	fmt.Println("Task-2")
 	var (
 		n2  = 1235
@@ -22,6 +23,7 @@ func main() {
 	rem = (rem / 100) % 10
 	fmt.Println(n2, ", yuz = ", rem)
 
+	//task-3
 	fmt.Println("Task-3")
 	var (
 		n3   = 3458
@@ -31,6 +33,7 @@ func main() {
 	rem1 = rem1 / 1000
 	fmt.Println(n3, ", ming = ", rem1)
 
+	//task-4
 	fmt.Println("Task-4")
 	fmt.Print("Input N: ")
 	var (
@@ -41,6 +44,7 @@ func main() {
 	minut = N / 60
 	fmt.Println("Min: ", minut)
 
+	//task-5
 	fmt.Println("Task-5")
 	fmt.Print("Input N: ")
 	var (
@@ -50,7 +54,7 @@ func main() {
 	fmt.Scan(&N1)
 	h = N1 / 3600
 	fmt.Println("Soat: ", h)
-
+	//task-6
 	fmt.Println("Task-6")
 	fmt.Print("Input N: ")
 	var (
@@ -61,6 +65,7 @@ func main() {
 	minut1 = N2 / 60
 	fmt.Printf("Min: %d, secund: %d\n", minut1, N2)
 
+	//task-7
 	fmt.Println("Task-7")
 	var (
 		N3 int
@@ -70,6 +75,7 @@ func main() {
 	h1 = N3 / 3600
 	fmt.Printf("Soat: %d, secund: %d\n", h1, N3)
 
+	//task-8
 	fmt.Println("Task-8")
 	var (
 		N4   int
@@ -81,6 +87,7 @@ func main() {
 	min = N4 / 60
 	fmt.Printf("Soat: %d, Minut: %d, Secund: %d\n", hour, min, N4)
 
+	//task-9
 	fmt.Println("Task-9")
 	var (
 		n9   = 9458
@@ -89,4 +96,49 @@ func main() {
 	rem9 = (n9 / 100) * 100
 	rem9 = rem9 / 1000
 	fmt.Println(n9, ", ming = ", rem9)
+
+	//task-1
+	fmt.Println("Task-1")
+	var (
+		side1 int
+		side2 int
+		s     int
+	)
+	fmt.Scan(&side1)
+	fmt.Scan(&side2)
+	s = (side1 * side2) / 2
+	fmt.Println(s)
+
+	fmt.Println("Task-2")
+	var cub int
+
+	fmt.Scan(&cub)
+	fmt.Println(cub * cub * cub)
+
+	fmt.Println("Task-3")
+	var r int
+	fmt.Scan(&r)
+	fmt.Println(float32(r*r) * 3.14)
+
+	fmt.Println("Task-4")
+	var (
+		s1  int
+		s2  int
+		per int
+	)
+	fmt.Scan(&s1)
+	fmt.Scan(&s2)
+	per = (s1 + s2) * 2
+	fmt.Println(per)
+
+	fmt.Println("Task-5")
+	var (
+		hajmi float32
+		yuzi  float32
+		r1    int
+	)
+	fmt.Scan(&r1)
+	yuzi = 4 * 3.14 * float32(r1*r1)
+	hajmi = 4 / 3 * 3.14 * float32(r1*r1)
+	fmt.Printf("Yuzi : %f, Hajmi: %f\n", yuzi, hajmi)
 }
