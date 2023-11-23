@@ -243,16 +243,16 @@ func multipTable(n int) {
 }
 func main() {
 	//task-1
-	// var tub int
-	// fmt.Print(("Input number: "))
-	// fmt.Scan(&tub)
-	// tubSon(tub)
+	var tub int
+	fmt.Print(("Input number: "))
+	fmt.Scan(&tub)
+	tubSon(tub)
 
-	// //task-2
-	// var N int
-	// fmt.Print(("Input number: "))
-	// fmt.Scan(&N)
-	// swap(N)
+	//task-2
+	var N int
+	fmt.Print(("Input number: "))
+	fmt.Scan(&N)
+	swap(N)
 
 	//task-3
 	var N1 int
@@ -261,22 +261,22 @@ func main() {
 	sumNum(N1)
 
 	//task-4
-	// var n int
-	// fmt.Print("Input num: ")
-	// fmt.Scan(&n)
-	// sumN(n)
+	var n int
+	fmt.Print("Input num: ")
+	fmt.Scan(&n)
+	sumN(n)
 
 	//task-5
-	// var a, b int
-	// fmt.Print("Input numbers: ")
-	// fmt.Scan(&a, &b)
-	// print(a, b)
+	var a, b int
+	fmt.Print("Input numbers: ")
+	fmt.Scan(&a, &b)
+	print(a, b)
 
 	// //task-6
-	// var n1 int
-	// fmt.Print("Input number: ")
-	// fmt.Scan(&n1)
-	// evenNum(n1)
+	var n1 int
+	fmt.Print("Input number: ")
+	fmt.Scan(&n1)
+	evenNum(n1)
 
 	//task-7
 	var a1, b1, c int
@@ -285,63 +285,63 @@ func main() {
 	middleNum(a1, b1, c)
 
 	//task-8
-	// var g int
-	// fmt.Print("Input num: ")
-	// fmt.Scan(&g)
-	// fmt.Println(evenSum(g))
+	var g int
+	fmt.Print("Input num: ")
+	fmt.Scan(&g)
+	fmt.Println(evenSum(g))
 
 	//task-9
-	// var n2, n3 int
-	// fmt.Print("Input numbers: ")
-	// fmt.Scan(&n2, &n3)
-	// fmt.Println(divideN(n2, n3))
+	var n2, n3 int
+	fmt.Print("Input numbers: ")
+	fmt.Scan(&n2, &n3)
+	fmt.Println(divideN(n2, n3))
 
 	//task-10
-	// var v int
-	// fmt.Print("Input num: ")
-	// fmt.Scan(&v)
-	// fmt.Println(sumNums(v))
+	var v int
+	fmt.Print("Input num: ")
+	fmt.Scan(&v)
+	fmt.Println(sumNums(v))
 
 	//task-11
-	// var v1 int
-	// fmt.Print("Input num: ")
-	// fmt.Scan(&v1)
-	// algorithm(v1)
+	var v1 int
+	fmt.Print("Input num: ")
+	fmt.Scan(&v1)
+	algorithm(v1)
 
 	//task-12
-	// var n4 int
-	// fmt.Print("Input num: ")
-	// fmt.Scan(&n4)
-	// primeDivider(n4)
+	var n4 int
+	fmt.Print("Input num: ")
+	fmt.Scan(&n4)
+	primeDivider(n4)
 
 	//task-13
-	// var m int
-	// fmt.Print("Input num: ")
-	// fmt.Scan(&m)
-	// fmt.Println(multiplication(m))
+	var m int
+	fmt.Print("Input num: ")
+	fmt.Scan(&m)
+	fmt.Println(multiplication(m))
 
 	//task-14
-	// var k, k1, k2 int
-	// fmt.Print("Input three numbers: ")
-	// fmt.Scan(&k, &k1, &k2)
-	// fmt.Println(add(k, k1, k2))
+	var k, k1, k2 int
+	fmt.Print("Input three numbers: ")
+	fmt.Scan(&k, &k1, &k2)
+	fmt.Println(add(k, k1, k2))
 
 	//task-15
-	// var r float32
-	// var r1 int
-	// fmt.Print("Input numbers: ")
-	// fmt.Scan(&r, &r1)
-	// fmt.Println(power(r, r1))
+	var r float32
+	var r1 int
+	fmt.Print("Input numbers: ")
+	fmt.Scan(&r, &r1)
+	fmt.Println(power(r, r1))
 
 	//task-16
-	// var h int
-	// fmt.Print("Input number: ")
-	// fmt.Scan(&h)
-	// toqSon(h)
+	var h int
+	fmt.Print("Input number: ")
+	fmt.Scan(&h)
+	toqSon(h)
 
 	//task-17
-	// var table int
-	// fmt.Print("Input number: ")
-	// fmt.Scan(&table)
-	// multipTable(table)
+	var table int
+	fmt.Print("Input number: ")
+	fmt.Scan(&table)
+	multipTable(table)
 }
