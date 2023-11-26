@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"math"
 )
-//PRACTICE:
+
+// PRACTICE:
 // task-1
 func sum(a, b, c int) {
 	max := 0
@@ -71,26 +72,41 @@ func fib(n int) int {
 }
 
 // task-5
-func reshetka(n int) {
+// func reshetka(n int) {
 
-	result := ""
+// 	result := ""
 
-	for i := 0; i < n; i++ {
-		for k := 0; k < n-i-1; k++ {
-			result += " "
-		}
+// 	for i := n; i >0 ; i-- {
+// 		for k := i; k < n; k++ {
+// 			result += " "
+// 		}
 
-		for j := 0; j <= i; j++ {
-			result += "#"
-		}
+// 		for j := 0; j <= i; j++ {
+// 			result += "#"
+// 		}
 
-		fmt.Println(result)
+// 		fmt.Println(result)
 
-		result = ""
+// 		result = ""
 
-	}
-	//fmt.Println()
-}
+// 		/*result := ""
+
+// 	for i := 0; i < n; i++ {
+// 		for k := 0; k < n-i-1; k++ {
+// 			result += " "
+// 		}
+
+// 		for j := 0; j <= i; j++ {
+// 			result += "#"
+// 		}
+
+// 		fmt.Println(result)
+
+// 		result = ""*/
+
+// 	}
+// 	//fmt.Println()
+// }
 
 // task-6
 func digits(n int) {
@@ -129,4 +145,3 @@ func reverse(r int) {
 	}
 	fmt.Println()
 }
-

@@ -146,61 +146,97 @@ func logic(n int) {
 
 }
 
+func reshetka(n int) {
+
+	result := ""
+
+	for i := n; i > 0; i-- {
+		for k := i; k < n; k++ {
+			result += " "
+		}
+
+		for j := 1; j <= i; j++ {
+			result += "#"
+		}
+
+		fmt.Println(result)
+
+		result = ""
+
+		/*result := ""
+
+		for i := 0; i < n; i++ {
+			for k := 0; k < n-i-1; k++ {
+				result += " "
+			}
+
+			for j := 0; j <= i; j++ {
+				result += "#"
+			}
+
+			fmt.Println(result)
+
+			result = ""*/
+
+	}
+	//fmt.Println()
+}
+
 func main() {
 	//HOMEWORK
-	var number int
-	fmt.Print("Input num: ")
-	fmt.Scan(&number)
-	logic(number)
-	
+	// var number int
+	// fmt.Print("Input num: ")
+	// fmt.Scan(&number)
+	// logic(number)
+
 	//PRACTICE
 	// //task-1
-	var a, b, c int
-	fmt.Print("Input numbers: ")
-	fmt.Scan(&a, &b, &c)
-	sum(a, b, c)
+	// var a, b, c int
+	// fmt.Print("Input numbers: ")
+	// fmt.Scan(&a, &b, &c)
+	// sum(a, b, c)
 	// //task-2
-	var x1, x2, y1, y2 float64
-	fmt.Print("Input coordinates: ")
-	fmt.Scan(&x1, &x2, &y1, &y2)
-	coordinates(x1, x2, y1, y2)
-	// //task-3
-	var r, r1, r2 float64
-	fmt.Print("Input a,b,c: ")
-	fmt.Scan(&r, &r1, &r2)
-	equation(r, r1, r2)
-	//task-4
-	var n int
-	fmt.Print("Input number: ")
-	fmt.Scan(&n)
-	fmt.Println(fib(n))
-	//task-5
+	// var x1, x2, y1, y2 float64
+	// fmt.Print("Input coordinates: ")
+	// fmt.Scan(&x1, &x2, &y1, &y2)
+	// coordinates(x1, x2, y1, y2)
+	// // //task-3
+	// var r, r1, r2 float64
+	// fmt.Print("Input a,b,c: ")
+	// fmt.Scan(&r, &r1, &r2)
+	// equation(r, r1, r2)
+	// //task-4
+	// var n int
+	// fmt.Print("Input number: ")
+	// fmt.Scan(&n)
+	// fmt.Println(fib(n))
+	// //task-5
 	var n1 int
 	fmt.Print("Input number : ")
 	fmt.Scan(&n1)
 	reshetka(n1)
 
-	//task-6
-	var n2 int
-	fmt.Print("Input number: ")
-	fmt.Scan(&n2)
-	digits(n2)
+	// //task-6
+	// var n2 int
+	// fmt.Print("Input number: ")
+	// fmt.Scan(&n2)
+	// digits(n2)
 
-	//task-7
-	var n3, n4 int
-	fmt.Print("Input two numbers: ")
-	fmt.Scan(&n3, &n4)
-	fmt.Println(add(n3, n4))
+	// //task-7
+	// var n3, n4 int
+	// fmt.Print("Input two numbers: ")
+	// fmt.Scan(&n3, &n4)
+	// fmt.Println(add(n3, n4))
 
-	//taks-8
-	var f int
-	fmt.Print("Input nummber: ")
-	fmt.Scan(&f)
-	fmt.Println(fact(f))
-	//task-9
-	var N int
-	fmt.Print("Input number: ")
-	fmt.Scan(&N)
-	reverse(N)
+	// //taks-8
+	// var f int
+	// fmt.Print("Input nummber: ")
+	// fmt.Scan(&f)
+	// fmt.Println(fact(f))
+	// //task-9
+	// var N int
+	// fmt.Print("Input number: ")
+	// fmt.Scan(&N)
+	// reverse(N)
 
 }
