@@ -6,6 +6,11 @@ import "fmt"
 func logic(n int) {
 	var s string = ""
 	var k int
+	count := 0
+	for i := 0; i < n; i++ {
+		n /= 10
+		count++
+	}
 	if n > 0 && n < 10 {
 		k = (n / 1) % 10
 		switch k {
@@ -184,10 +189,10 @@ func reshetka(n int) {
 
 func main() {
 	//HOMEWORK
-	// var number int
-	// fmt.Print("Input num: ")
-	// fmt.Scan(&number)
-	// logic(number)
+	var number int
+	fmt.Print("Input num: ")
+	fmt.Scan(&number)
+	logic(number)
 
 	//PRACTICE
 	// //task-1
@@ -211,10 +216,10 @@ func main() {
 	// fmt.Scan(&n)
 	// fmt.Println(fib(n))
 	// //task-5
-	var n1 int
-	fmt.Print("Input number : ")
-	fmt.Scan(&n1)
-	reshetka(n1)
+	// var n1 int
+	// fmt.Print("Input number : ")
+	// fmt.Scan(&n1)
+	// reshetka(n1)
 
 	// //task-6
 	// var n2 int
