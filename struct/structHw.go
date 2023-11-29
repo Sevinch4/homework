@@ -294,17 +294,17 @@ func main(){
 			}
 		}
 	}
-	for _,t := range slice1{
+	
 	for i:=0;i<len(slice1)-1;i++ {
 		for j := i+1; j < len(slice1); j++ {
 			if 	slice1[i].playersCount<slice1[j].playersCount{
 				slice1[j],slice1[i]=slice1[i],slice1[j]
 			}
 		}
-		
 	}
-	fmt.Println(t.name,t.coach,t.playersCount,t.Captain)
-}
+	for _,val := range slice1{
+		fmt.Println(val)
+	}
 
 
 }
