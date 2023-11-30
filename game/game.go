@@ -29,7 +29,6 @@ func tubSon(n int) bool {
 		if n%i == 0 {
 			isTrue = false
 		} else {
-			fmt.Println("Random number is prime!")
 			isTrue = true
 		}
 	}
@@ -51,7 +50,7 @@ func (g Game) StartGame() {
 	fmt.Println("This is guessing game")
 	g.tubson = tubSon(g.RandomNumber)
 	if g.tubson {
-		fmt.Println("")
+		fmt.Println("Random number is prime!")
 	}
 	for i := 0; i < g.Player.chances; i++ {
 		var n int
