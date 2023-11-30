@@ -7,94 +7,98 @@ import (
 
 //const chances = 3
 
-func main(){
+func main() {
 	player := Player{}
 	game := Game{}
 
-	name,age,favouriteNumber,chances:= getplayerName()
-	newPlayer := player.NewPlayer(name,age,favouriteNumber,chances)
+	name, age, favouriteNumber, chances := getplayerName()
+	newPlayer := player.NewPlayer(name, age, favouriteNumber, chances)
 	newGame := game.NewGame(newPlayer)
 	newGame.StartGame()
 }
-type Game struct{
-	RandomNumber int 
-	Player Player
-	tubson bool
+
+type Game struct {
+	RandomNumber int
+	Player       Player
+	tubson       bool
 }
-func tubSon(n int)bool{
-	var isTrue bool 
+
+func tubSon(n int) bool {
+	var isTrue bool
 	for i := 2; i < n/2; i++ {
-		if n%i == 0{
+		if n%i == 0 {
 			isTrue = false
-		}else{
+		} else {
 			fmt.Println("Random number is prime!")
 			isTrue = true
 		}
 	}
 	return isTrue
 }
-func (g Game) NewGame(player Player)Game{
-	if g.Player.chances > 5{
+func (g Game) NewGame(player Player) Game {
+	if g.Player.chances > 5 {
 		g.RandomNumber = rand.Intn(1000)
-	}else{
+	} else {
 		g.RandomNumber = rand.Intn(100)
 	}
 	return Game{
-			RandomNumber: g.RandomNumber,
-			Player: player,
-		
-		
-		
+		RandomNumber: g.RandomNumber,
+		Player:       player,
 	}
 }
-func (g Game) StartGame(){
-	fmt.Printf("Welcome %s\n",g.Player.name)
+func (g Game) StartGame() {
+	fmt.Printf("Welcome %s\n", g.Player.name)
 	fmt.Println("This is guessing game")
+	g.tubson = tubSon(g.RandomNumber)
+	if g.tubson {
+		fmt.Println("")
+	}
 	for i := 0; i < g.Player.chances; i++ {
-		var n int 
-		fmt.Printf("%d chance enter number: ",i+1)
+		var n int
+		fmt.Printf("%d chance enter number: ", i+1)
 		fmt.Scan(&n)
-		g.tubson = tubSon(g.RandomNumber)
-		if n==g.RandomNumber{
-			fmt.Println("You won! you found random number in ",i+1,"tries,random num is: ",g.RandomNumber)
+		if n == g.RandomNumber {
+			if g.RandomNumber == n {
+				if g.Player.favouriteNumber == g.RandomNumber {
+					fmt.Println("You won Random number is your favourite num: ", g.Player.favouriteNumber)
+				}
+			fmt.Println("You won! you found random number in ", i+1, "tries,random num is: ", g.RandomNumber)
 			return
-		}else if g.RandomNumber == n{
-			if g.Player.favouriteNumber == g.RandomNumber{
-			fmt.Println("You won Random number is your favourite num: ",g.Player.favouriteNumber)
-		}
-			return 
-		}else{
+		} else {
 			fmt.Println("Incorrect")
-			if n > g.RandomNumber{
+			if n > g.RandomNumber {
 				fmt.Println("Random number lower than your enter number.")
-			}else {
+			} else {
 				fmt.Println("Random number greater than your enter number.")
 			}
 		}
 	}
-	
-	fmt.Println("You lost!\nThe random number was",g.RandomNumber)
+
+	fmt.Println("You lost!\nThe random number was", g.RandomNumber)
 }
-type Player struct{
-	name string
-	age int 
-	favouriteNumber int 
-	chances int 
 }
-func (p Player) NewPlayer(name string,age int,favouriteNumber int,chances int )Player{
+
+type Player struct {
+	name            string
+	age             int
+	favouriteNumber int
+	chances         int
+}
+
+func (p Player) NewPlayer(name string, age int, favouriteNumber int, chances int) Player {
 	return Player{
-		name : name,
-		age: age,
+		name:            name,
+		age:             age,
 		favouriteNumber: favouriteNumber,
-		chances: chances,
+		chances:         chances,
 	}
 }
-func getplayerName()(string,int,int,int){
-	var(
-		name string
-		age int 
-		favouriteNumber int 
-		chances int
+func getplayerName() (string, int, int, int) {
+	var (
+		name            string
+		age             int
+		favouriteNumber int
+		chances         int
 	)
 	fmt.Print("enter your name: ")
 	fmt.Scan(&name)
@@ -105,5 +109,5 @@ func getplayerName()(string,int,int,int){
 	fmt.Print("enter how many chances you want: ")
 	fmt.Scan(&chances)
 
-	return name,age,favouriteNumber,chances
+	return name, age, favouriteNumber, chances
 }
