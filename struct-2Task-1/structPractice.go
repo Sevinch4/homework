@@ -85,4 +85,3 @@ func main() {
 		fmt.Print(" Total Sum ", sum, "\n")
 	}
 }
-
