@@ -8,7 +8,6 @@ import (
 	"main/store/basket"
 	"main/store/costumer"
 )
-//1:33
 const (
 	StartShopCmd = iota + 1
 	FinishShopCmd
@@ -90,6 +89,7 @@ func main() {
 			case StartShopCmd:
 				store1.StartSell(user)
 			case FinishShopCmd:
+				
 				return
 			}
 		case UserQuitCmd:

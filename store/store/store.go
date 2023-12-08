@@ -59,8 +59,8 @@ func (s *Store) StartSell(user costumer.Costumer){
 		Quantity: productSellRequest.Quantity,
 		Price: p.Price,
 	})
-	fmt.Println("user basket: ",user.Basket.UserBasket())
-
+	//fmt.Println("user basket: ",user.Basket.UserBasket())
+	user.Basket.UserBasket()
 	s.Profit += productSellRequest.Quantity * (p.Price - p.Originalprice)
 }
 

@@ -1,32 +1,33 @@
 package product
-import "fmt"
-var(
-	List = ProductList{
-			{
-				Name: "Non",
-				Price: 4_000,
-				Originalprice: 2_000,
-				Quantity: 10,
-			},
-			{
-				Name: "Cola",
-				Price: 13_000,
-				Originalprice: 6_500,
-				Quantity: 0,
-			},
-			{
-				Name: "Nestle",
-				Price: 3_000,
-				Originalprice: 1_500,
-				Quantity: 15,
-			},
 
-		}
+import (
+	"encoding/json"
+	"fmt"
+	"os"
 )
+var (
+	List = ProductList{}
+)
+func (l *ProductList) ProdList(){
+	//list := []ProductList{}
+	file,err := os.Open("List.json")
+	if err != nil{
+		panic(err)
+	}
+	if err := json.NewDecoder(file).Decode(&List); err != nil{
+		panic(err)
+	}
+}
+// type List struct{
+// 	Name string `json: "name"`
+// 	Price int `json: "price"`
+// 	Originalprice int `json: "original_price"`
+// 	Quantity int `json: "quantity"`
+// }
 type Product struct{
-	Name string
+	Name string 
 	Price int 
-	Originalprice int
+	Originalprice int 
 	Quantity int 
 }
 type ProductSellRequest struct{
