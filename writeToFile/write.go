@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"os"
 )
 
+// task
 var m = map[string]string{
 	"name":   "ism",
 	"age":    "yosh",
@@ -19,7 +19,7 @@ var m = map[string]string{
 }
 
 func main() {
-	file, err := os.OpenFile("File.txt", os.O_CREATE|os.O_RDWR, 06666)//openFile is open file or create file 
+	file, err := os.OpenFile("File.txt", os.O_CREATE|os.O_RDWR, 06666) //openFile is open file or create file
 	if err != nil {
 		panic(err)
 	}
@@ -31,8 +31,21 @@ func main() {
 	// fmt.Println(n)
 
 	//file write II
-	
+	// if _, err := file.Write([]byte("hello guys")); err != nil {
+	// 	panic(err)
+	// }
 
+	//file write III
+	// if _,err := io.WriteString(file,"salom dunyo"); err != nil{
+	// 	panic(err)
+	// }
+
+	//file write IV
+	// if err := os.WriteFile("File.txt",[]byte("salom"),0666); err !=nil{
+	// 	panic(err)
+	// }
+
+	//task
 	// file, err := os.OpenFile("file.txt", os.O_RDWR|os.O_CREATE, 0666)
 	// if err != nil {
 	// 	panic(err)

@@ -26,6 +26,24 @@ type Worker struct {
 	Salary    int    `json:"salary"`
 	Level     string `json:"level"`
 }
+var companies1 = []Company{
+	{
+		Id: 1,
+		Name: "apple",
+		Owner: Owner{
+			FirstName: "steve",
+			LastName: "jobs",
+		},
+		Workers: []Worker{
+			{
+				ID: 1,
+				FirstName: "somename",
+				LastName: "somelastname",
+				Salary: 30000,
+			},
+		},
+	},
+}
 
 func main() {
 	companies := []Company{}
