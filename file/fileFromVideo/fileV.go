@@ -29,25 +29,25 @@ type User struct {
 	Cash   int    `json: "cash"`
 	Basket Basket
 }
-type Animal struct{
-	Name string `json: "name"`
-	Type string `json: "type"`
+type Animal struct {
+	Name  string `json: "name"`
+	Type  string `json: "type"`
 	Sound string `json: "sound"`
 }
 
 func main() {
 	//animal example
 	a := []Animal{}
-	file,err := os.Open("JsonFile.json")
-	if err != nil{
+	file, err := os.Open("JsonFile.json")
+	if err != nil {
 		panic(err)
 	}
-	if err := json.NewDecoder(file).Decode(&a); err != nil{
+	if err := json.NewDecoder(file).Decode(&a); err != nil {
 		panic(err)
 	}
 	fmt.Println(a)
-	for _,animal := range a{
-		if animal.Type == "wild"{
+	for _, animal := range a {
+		if animal.Type == "wild" {
 			fmt.Println(animal)
 		}
 	}
@@ -57,11 +57,11 @@ func main() {
 	// if err != nil{
 	// 	panic(err)
 	// }
-	// user := User{}
-	// if err := json.NewDecoder(file).Decode(&user); err != nil{
+	// person := User{}
+	// if err := json.NewDecoder(file).Decode(&person); err != nil{
 	// 	panic(err)
 	// }
-	// fmt.Println(user)
+	// fmt.Println(person)
 
 	//create file
 	// file,err := os.Create("File1.txt")//RDWR - ochb ketadi qayta run time qganda
