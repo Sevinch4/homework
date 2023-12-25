@@ -7,6 +7,8 @@ import (
 	_ "github.com/lib/pq"
 	"main/market/categories"
 	"main/market/category_repo"
+	"main/market/product_repo"
+	"main/market/products"
 	"time"
 )
 
@@ -18,6 +20,7 @@ func main() {
 	defer db.Close()
 
 	categoryRepo := category_repo.NewCategory(db)
+	productRepo := product_repo.NewProduct(db)
 
 	var option int
 	fmt.Print(`
@@ -118,11 +121,91 @@ choose option:
 		fmt.Scan(&prodOption)
 		switch prodOption {
 		case 1: //insert
-		case 2: //update
-		case 3: //get list
-		case 4: //get by id
-		case 5: //delete
+			var (
+				product_name string
+				price        int
+				category_id  string
+			)
+			fmt.Print("input name: ")
+			fmt.Scan(&product_name)
+			fmt.Print("input price: ")
+			fmt.Scan(&price)
+			fmt.Print("input category_id: ")
+			fmt.Scan(&category_id)
 
+			id_category, err := uuid.Parse(category_id)
+			if err != nil {
+				fmt.Println("error is while parsing category id", err)
+				return
+			}
+			product := products.Product{
+				ID:          uuid.New(),
+				Name:        product_name,
+				Price:       price,
+				Category_id: id_category,
+				Created_at:  time.Time{},
+				Updated_at:  time.Time{},
+			}
+			if err = productRepo.InsertProduct(product); err != nil {
+				fmt.Println("error is while inserting data", err)
+				return
+			}
+			fmt.Println("product added")
+		case 2: //update
+			var (
+				product_id   string
+				product_name string
+				price        int
+				category_id  string
+			)
+			fmt.Print("input id: ")
+			fmt.Scan(&product_id)
+			fmt.Print("input name: ")
+			fmt.Scan(&product_name)
+			fmt.Print("input price: ")
+			fmt.Scan(&price)
+			fmt.Print("input category_id: ")
+			fmt.Scan(&category_id)
+
+			id_category, err := uuid.Parse(category_id)
+			id_product, err := uuid.Parse(product_id)
+			if err != nil {
+				fmt.Println("error is while parsing category id", err)
+				return
+			}
+			product := products.Product{
+				ID:          id_product,
+				Name:        product_name,
+				Price:       price,
+				Category_id: id_category,
+				Updated_at:  time.Now(),
+			}
+			if err = productRepo.UpdateProductByID(product); err != nil {
+				fmt.Println("error is while inserting data", err)
+				return
+			}
+			fmt.Println("product updated")
+		case 3: //get list
+			if err = productRepo.GetList(); err != nil {
+				fmt.Println("error is while getting list", err)
+			}
+		case 4: //get by id
+			var product_id string
+			fmt.Print("input id: ")
+			fmt.Scan(&product_id)
+			if err = productRepo.GetProductByID(product_id); err != nil {
+				fmt.Println("error is while get product by id", err)
+				return
+			}
+		case 5: //delete
+			var product_id string
+			fmt.Print("input id: ")
+			fmt.Scan(&product_id)
+			if err = productRepo.DeleteProduct(product_id); err != nil {
+				fmt.Println("error is while get product by id", err)
+				return
+			}
+			fmt.Println("product deleted")
 		}
 
 	}
