@@ -111,7 +111,7 @@ choose option:
 	case 2: //products
 		var prodOption int
 		fmt.Print(`
-			1 - insert products
+			1 - insert product
 			2 - Update product
 			3 - get List
 			4 - get by id
@@ -143,8 +143,8 @@ choose option:
 				Name:        product_name,
 				Price:       price,
 				Category_id: id_category,
-				Created_at:  time.Time{},
-				Updated_at:  time.Time{},
+				Created_at:  time.Now(),
+				Updated_at:  time.Now(),
 			}
 			if err = productRepo.InsertProduct(product); err != nil {
 				fmt.Println("error is while inserting data", err)
