@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"main/person/repo"
+	"main/person/user"
 )
 
 /*
@@ -52,7 +53,13 @@ func main() {
 		fmt.Scan(&email)
 
 		//add method
-		if err = rep.AddUser(id, first_name, last_name, email); err != nil {
+		us := user.User{
+			Id:         id,
+			First_name: first_name,
+			Last_name:  last_name,
+			Email:      email,
+		}
+		if err = rep.AddUser(us); err != nil {
 			fmt.Println("error is while adding user", err)
 		}
 		fmt.Println("user successfully added")

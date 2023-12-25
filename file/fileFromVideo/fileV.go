@@ -104,7 +104,7 @@ func main() {
 	// fmt.Println(string(b))
 
 	//file read line by line
-	// 	product := []Product{}
+	// 	products := []Product{}
 	// 	scanner := bufio.NewScanner(file)
 	// 	for scanner.Scan(){//returns bool, data oqib bogunca,kursor bn oqidi
 	// 		p := Product{}
@@ -117,13 +117,13 @@ func main() {
 	// 		p.Quantity = quantity
 	// 		p.Price = price
 	// 		p.OriginalPrice = originalP
-	// 		product = append(product, p)//bitta slice ga yigadi
+	// 		products = append(products, p)//bitta slice ga yigadi
 	// 		//fmt.Println(slice)
 	// 		//same thing split and fields
 	// 		// slice1 := strings.Fields(line)
 	// 		// fmt.Println(slice1)
 	// 	}
-	// 	fmt.Println(product)//bitda slicega yigilgan datani chiqaradi
+	// 	fmt.Println(products)//bitda slicega yigilgan datani chiqaradi
 
 	//NEWDECDER AND DECODE
 	// c := Car{}

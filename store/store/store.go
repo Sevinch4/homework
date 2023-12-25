@@ -27,11 +27,11 @@ func NewStore(repository repo.Repository) Store {
 }
 
 func (s *Store) StartSell(user costumer.Costumer) {
-	//productSellRequest := product.GetProductInfo()
+	//productSellRequest := products.GetProductInfo()
 	productSellRequest := product.GetProductInfo()
 	p, exists := s.Repository.Search(productSellRequest.Name)
 	if !exists {
-		fmt.Printf("We do not have this product\nWe will bring %s in the next time\n", productSellRequest.Name)
+		fmt.Printf("We do not have this products\nWe will bring %s in the next time\n", productSellRequest.Name)
 		p, success := s.Dealer.ProvideProduct(productSellRequest.Name, s.Budget, productSellRequest.Quantity)
 		if !success {
 			fmt.Println("We will buy !!!!!!")
@@ -47,7 +47,7 @@ func (s *Store) StartSell(user costumer.Costumer) {
 		return
 	}
 	if p.Quantity < productSellRequest.Quantity {
-		fmt.Printf("We do not have enough %s product, left %d\n", productSellRequest.Name, p.Quantity)
+		fmt.Printf("We do not have enough %s products, left %d\n", productSellRequest.Name, p.Quantity)
 		return
 	}
 

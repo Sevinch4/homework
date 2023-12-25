@@ -18,14 +18,14 @@ func NewUser(db *sql.DB) Repo {
 }
 
 // add data
-func (r Repo) AddUser(id int, first_name string, last_name, email string) error {
-	user := user.User{
-		Id:         id,
-		First_name: first_name,
-		Last_name:  last_name,
-		Email:      email,
-	}
-	if _, err := r.db.Exec(`insert into users values($1,$2,$3,$4)`, &user.Id, &user.First_name, &user.Last_name, &user.Email); err != nil {
+func (r Repo) AddUser(u user.User) error {
+	//user := user.User{
+	//	Id:         id,
+	//	First_name: first_name,
+	//	Last_name:  last_name,
+	//	Email:      email,
+	//}
+	if _, err := r.db.Exec(`insert into users values($1,$2,$3,$4)`, &u.Id, &u.First_name, &u.Last_name, &u.Email); err != nil {
 		return err
 	}
 	return nil

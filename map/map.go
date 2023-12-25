@@ -61,9 +61,9 @@ func main() {
 	// 	sum := 0
 	// 	for _,trans := range transaction{
 	// 		if branch.Id == trans.BranchId{
-	// 		for _,product := range product{
-	// 				if product.Id == trans.ProductId{
-	// 					sum += trans.Quantity * product.Price
+	// 		for _,products := range products{
+	// 				if products.Id == trans.ProductId{
+	// 					sum += trans.Quantity * products.Price
 	// 				}
 	// 			}
 	// 		}
